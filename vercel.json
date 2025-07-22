@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "frontend/dist/index.html",
+      "use": "@vercel/static",
+      "config": { "distDir": "frontend/dist" }
+    },
+    {
+      "src": "backend/electionsystem/wsgi.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/backend/electionsystem/wsgi.py"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/frontend/dist/index.html"
+    }
+  ]
+}

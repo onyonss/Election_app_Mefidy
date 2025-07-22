@@ -1,0 +1,15 @@
+# Skip big and private stuff
+backend/electionsystem/db.sqlite3
+.venv/
+*.log
+.DS_Store
+
+# Skip Python wrappers
+backend/electionsystem/**/__pycache__/
+backend/electionsystem/**/*.pyc
+
+# Skip frontend messy stuff
+frontend/node_modules/
+frontend/build/
+frontend/dist/
+frontend/.env
